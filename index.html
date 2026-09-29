@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollo — Berbagi & Berkarya</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>H</span>ollo</a>
+  <div class="search"><input id="searchInput" placeholder="Cari di Hollo..."></div>
+  <nav><a href="create.html">＋ Buat</a><a href="profile.html">Profil</a><button id="themeBtn">☾</button></nav>
+</header>
+
+<main class="layout">
+  <aside class="sidebar card">
+    <a class="active" href="index.html">🏠 Beranda</a>
+    <a href="create.html">✏️ Buat Postingan</a>
+    <a href="profile.html">👤 Profil</a>
+    <a href="#discover">✨ Jelajahi</a>
+    <hr>
+    <p class="muted">Hollo adalah ruang sederhana untuk berbagi cerita, musik, karya, dan ide.</p>
+  </aside>
+
+  <section class="feed">
+    <div class="hero card">
+      <div><p class="eyebrow">SELAMAT DATANG</p><h1>Hollo.</h1><p>Tempat kecil untuk berbagi sesuatu yang berarti.</p></div>
+      <a class="btn" href="create.html">＋ Buat postingan</a>
+    </div>
+
+    <div id="posts"></div>
+  </section>
+
+  <aside class="rightbar">
+    <div class="card">
+      <h3>Topik Hollo</h3>
+      <div class="tags"><span>🎵 Musik</span><span>🎨 Seni</span><span>✍️ Cerita</span><span>💡 Ide</span></div>
+    </div>
+    <div class="card" id="discover">
+      <h3>Tentang Hollo</h3>
+      <p class="muted">Berkarya tidak harus sempurna. Yang penting terus berjalan.</p>
+    </div>
+  </aside>
+</main>
+
+<footer>© 2026 Hollo — ruang untuk berbagi & berkarya.</footer>
+<script src="script.js"></script>
+</body>
+</html>

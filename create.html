@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buat Postingan — Hollo</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span>H</span>ollo</a><nav><a href="index.html">Beranda</a><a href="profile.html">Profil</a></nav></header>
+<main class="single">
+<div class="card form-card">
+<p class="eyebrow">HOLLO</p><h1>Buat postingan</h1>
+<input id="postTitle" placeholder="Judul postingan">
+<textarea id="postText" rows="8" placeholder="Tulis sesuatu..."></textarea>
+<input id="postTag" placeholder="Topik, contoh: Musik">
+<div class="actions"><a class="btn ghost" href="index.html">Batal</a><button class="btn" id="publishBtn">Publikasikan</button></div>
+</div>
+</main>
+<script>
+document.getElementById('publishBtn').onclick=()=>{
+ const title=document.getElementById('postTitle').value.trim();
+ const text=document.getElementById('postText').value.trim();
+ const tag=document.getElementById('postTag').value.trim()||'Umum';
+ if(!text){alert('Tulis isi postingan terlebih dahulu.');return;}
+ const posts=JSON.parse(localStorage.getItem('hollo_posts')||'[]');
+ posts.unshift({id:Date.now(),title:title||'Tanpa Judul',text,tag,likes:0,comments:[],author:'OmSetQiu',time:new Date().toLocaleString('id-ID')});
+ localStorage.setItem('hollo_posts',JSON.stringify(posts));
+ location.href='index.html';
+};
+</script>
+</body></html>

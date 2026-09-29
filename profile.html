@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil — Hollo</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span>H</span>ollo</a><nav><a href="index.html">Beranda</a><a href="create.html">＋ Buat</a></nav></header>
+<main class="single">
+<div class="profile-head card"><div class="avatar">O</div><div><p class="eyebrow">PROFIL</p><h1>OmSetQiu</h1><p class="muted">Seni, musik, cerita, dan karya.</p></div><button class="btn ghost" onclick="alert('Fitur edit profil siap dihubungkan ke database.')">Edit Profil</button></div>
+<div class="card"><h2>Postingan Saya</h2><p class="muted">Postingan yang dibuat di perangkat ini akan muncul di sini.</p><div id="myPosts"></div></div>
+</main>
+<script>
+const posts=JSON.parse(localStorage.getItem('hollo_posts')||'[]');
+document.getElementById('myPosts').innerHTML=posts.length?posts.map(p=>`<article class="mini"><b>${p.title}</b><p>${p.text}</p><small>${p.tag} · ${p.time}</small></article>`).join(''):'<p class="muted">Belum ada postingan.</p>';
+</script>
+</body></html>
